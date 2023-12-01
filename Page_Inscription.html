@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Inscription - Arbre Généalogique</title>
+</head>
+
+<body>
+    <header>
+        <h1>Arbre Généalogique</h1>
+    </header>
+    <main>
+        <section class="signup-form">
+            <h2>Inscription</h2>
+
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="lastname">Nom :</label>
+                    <input type="text" id="lastname" name="lastname" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="firstname">Prénom :</label>
+                    <input type="text" id="firstname" name="firstname" required>
+                </div>
+
+                <button type="button" onclick="registerUser()">S'Inscrire</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        function generateToken() {
+            // Génération d'un identifiant unique côté client
+            return 'token_' + Math.random().toString(36).substr(2, 9);
+        }
+
+        function registerUser() {
+            var firstname = document.getElementById('firstname').value;
+            var lastname = document.getElementById('lastname').value;
+
+            // Génération de l'identifiant unique (token) côté client
+            var token = generateToken();
+
+            // Affichez l'identifiant unique dans la console (vous pouvez le stocker côté client ou l'envoyer au serveur)
+            console.log('Token généré :', token);
+
+            // Vous pouvez maintenant envoyer firstname, lastname et token au serveur via AJAX ou un formulaire classique
+        }
+    </script>
+</body>
+
+</html>
