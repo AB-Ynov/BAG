@@ -8,3 +8,4 @@ CREATE TABLE IF NOT EXISTS utilisateurs (
 );
 
 -- Autres tables pour les membres de la famille, les relations familiales, etc.
+-- Ajoutez d'autres attributs selon vos besoins.
